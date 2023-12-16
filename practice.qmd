@@ -57,14 +57,12 @@ fig = px.density_heatmap(
     height=300
 )
 
-# y축을 카테고리 타입으로 변경
-fig.update_yaxes(type='category')
 
 # y축 숫자를 한글로 변경
 day_of_week_mapping = {0: '월', 1: '화', 2: '수', 3: '목', 4: '금', 5: '토', 6: '일'}
 fig.update_yaxes(tickvals=list(day_of_week_mapping.keys()), ticktext=list(day_of_week_mapping.values()))
-fig.show()
 ```
+
 
 ```{python}
 tidydata2=df.pivot_table(
@@ -83,11 +81,9 @@ fig2=px.density_heatmap(
     nbinsy=7,
     height=300
 )
-# y축을 카테고리 타입으로 변경
-fig2.update_yaxes(type='category')
+
 
 # y축 숫자를 한글로 변경
 day_of_week_mapping = {0: '월', 1: '화', 2: '수', 3: '목', 4: '금', 5: '토', 6: '일'}
 fig2.update_yaxes(tickvals=list(day_of_week_mapping.keys()), ticktext=list(day_of_week_mapping.values()))
-fig2.show()
 ```
