@@ -21,6 +21,7 @@ import pickle
 pd.options.plotting.backend = "plotly"
 pio.templates.default = "plotly_white"
 
+# 준비
 
 df = pd.read_csv("https://raw.githubusercontent.com/guebin/DV2023/main/posts/NYCTaxi.csv").assign(
     log_trip_duration = lambda df: np.log(df.trip_duration),
@@ -88,7 +89,7 @@ fig2.update_yaxes(tickvals=list(day_of_week_mapping.keys()), ticktext=list(day_o
 
 ```
 
-# 기말고사1-(1),(2)
+# 기말고사1-(1),(2)  {orientation="columns" scrolling="true"}
 
 ## Column {width=50%}
 
