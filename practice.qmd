@@ -20,7 +20,6 @@ import pickle
 pd.options.plotting.backend = "plotly"
 pio.templates.default = "plotly_white"
 
-
 df = pd.read_csv("https://raw.githubusercontent.com/guebin/DV2023/main/posts/NYCTaxi.csv").assign(
     log_trip_duration = lambda df: np.log(df.trip_duration),
     pickup_datetime = lambda df: df.pickup_datetime.apply(pd.to_datetime),
@@ -34,7 +33,6 @@ df = pd.read_csv("https://raw.githubusercontent.com/guebin/DV2023/main/posts/NYC
     dropoff_hour = lambda df: df.dropoff_datetime.dt.hour,
     dayofweek = lambda df: df.pickup_datetime.dt.dayofweek
 )
-df_small = df[::100].reset_index(drop=True)
 
 tidydata=df.pivot_table(
     index='pickup_hour',
@@ -42,7 +40,6 @@ tidydata=df.pivot_table(
     values='speed',
     aggfunc='mean'
 ).stack().reset_index().rename({0:'평균속력'},axis=1)
-tidydata
 
 fig = px.density_heatmap(
     data_frame=tidydata,
@@ -67,7 +64,6 @@ tidydata2=df.pivot_table(
     values='dist',
     aggfunc='mean'
 ).stack().reset_index().rename({0:'평균이동거리'},axis=1)
-tidydata2
 
 fig2=px.density_heatmap(
     data_frame=tidydata2,
