@@ -6,4 +6,4 @@
 - <https://yujin302.github.io/dash_test/Energy.html>
 
 기말고사 예상문제
-<https://yujin302.github.io/dash_test/practice.html>
+- <https://yujin302.github.io/dash_test/practice.html>
