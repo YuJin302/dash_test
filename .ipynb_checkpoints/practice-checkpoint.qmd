@@ -1,6 +1,6 @@
 ---
 title: "NYCTaxi"
-author: "채유진(산업정보시스템공학과 - 202010893)"
+author: "채유진"
 format: dashboard
 execute: 
   enabled: true
@@ -26,7 +26,7 @@ pio.templates.default = "plotly_white"
 ## Column {width=50%}
 
 ```{python}
-df = pd.read_csv("https://raw.githubusercontent.com/guebin/DV2023/main/posts/NYCTaxi.csv").assign(
+df=pd.read_csv("https://raw.githubusercontent.com/guebin/DV2023/main/posts/NYCTaxi.csv").assign(
     log_trip_duration = lambda df: np.log(df.trip_duration),
     pickup_datetime = lambda df: df.pickup_datetime.apply(pd.to_datetime),
     dropoff_datetime = lambda df: df.dropoff_datetime.apply(pd.to_datetime),
@@ -57,8 +57,7 @@ fig = px.density_heatmap(
     height=300
 )
 
-
-# y축 숫자를 한글로 변경
+# y축숫자를 한글로 변경
 day_of_week_mapping = {0: '월', 1: '화', 2: '수', 3: '목', 4: '금', 5: '토', 6: '일'}
 fig.update_yaxes(tickvals=list(day_of_week_mapping.keys()), ticktext=list(day_of_week_mapping.values()))
 ```

@@ -6,6 +6,7 @@ execute:
   enabled: true
   cache: false
   freeze: false
+  kernel: python
 ---
 
 ```{python}
@@ -19,13 +20,7 @@ import pickle
 
 pd.options.plotting.backend = "plotly"
 pio.templates.default = "plotly_white"
-```
 
-# 기말고사1-(1),(2)  {orientation="columns" scrolling="true"}
-
-## Column {width=50%}
-
-```{python}
 df=pd.read_csv("https://raw.githubusercontent.com/guebin/DV2023/main/posts/NYCTaxi.csv").assign(
     log_trip_duration = lambda df: np.log(df.trip_duration),
     pickup_datetime = lambda df: df.pickup_datetime.apply(pd.to_datetime),
